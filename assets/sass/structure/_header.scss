@@ -1,0 +1,79 @@
+/*
+Header
+---------------------------------------------- */
+
+.site-header {
+	position: relative;
+    z-index: 9;
+    
+    @include breakpoint(xlarge) {
+		margin-bottom: -143px;
+        padding-top: 35px;
+	}
+  
+  	.row {
+		@include breakpoint(xlarge down) {
+			padding: 0;
+		}
+	}
+    
+	.site-branding {
+		text-align: center;
+		z-index: 99;
+		position: relative;
+		padding-top: 20px;
+ 		margin-bottom: 18px;
+		@include breakpoint(xlarge down) {
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+		.site-title {
+
+			@include breakpoint(small down) {
+				text-align: left !important;
+			}
+
+			@include breakpoint(large down) {
+				position: relative;
+				width: 100%;
+			}
+		}
+		img {
+			max-width: 380px;
+			@include breakpoint(small down) {
+				max-width: 220px;
+			}
+		}
+		@include breakpoint(large down) {
+			text-align: left;
+			margin-bottom: 0px;
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+ 		
+	}
+}
+
+
+.nav-primary .logo {
+    
+    display: none;
+    
+    @include breakpoint(xlarge) {
+	    display: inline-block;
+        position: relative;
+        top: -10px;
+	}
+    
+    img {
+        width: 300px;
+    }
+    
+    @include breakpoint(xxlarge) {
+	    img {
+            width: 380px;
+        }
+	}
+    
+    
+}

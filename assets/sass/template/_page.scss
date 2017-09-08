@@ -1,0 +1,18 @@
+html, body {
+	height: 100%;
+}
+
+.site-main {
+    padding: 50px 0;
+    
+    @include breakpoint(large) {
+        padding: 100px 0;
+    }
+}
+
+hr {
+  border-bottom: 2px solid #707484;
+  width: 100%;
+  max-width: 267px;
+  margin: 0 auto;
+}

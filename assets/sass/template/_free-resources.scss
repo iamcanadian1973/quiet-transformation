@@ -1,0 +1,42 @@
+.template-free-resources {
+  .hero {
+    background-image: url('../quiettransformations/assets/images/free-resources/free-resources-bg.jpg');
+  }
+  .subscribe {
+    padding: 80px 0;
+    @include breakpoint(small down) {
+      padding: 60px 0;
+    }
+    h2{
+      font-size: 36px;
+    }
+    .btn-primary{
+      margin: 25px 0 60px;
+    }
+  }
+}
+.resources {
+  padding: 80px 0;
+  @include breakpoint(small down) {
+    padding: 60px 0;
+  }
+  h2{
+    font-size: 36px;
+    text-align: left;
+  }
+  p{
+    font-size: 18px;
+  }
+}
+.resource-image {
+  @extend .teal-portal;
+  background-image: url('../quiettransformations/assets/images/free-resources/free-resources-bg.jpg');
+  min-height: 280px;
+  @include breakpoint(medium down) {
+    float: left;
+  }
+  @include breakpoint(small down) {
+    margin-top: 0!important;
+    margin-bottom: 30px!important;
+  }
+}

@@ -1,0 +1,16 @@
+.read-more {
+  padding: 65px 0;
+  text-align: center;
+}
+.pain-articles {
+  @extend .intro;
+  .upcoming{
+    text-align: center;
+  }
+  .ruler {
+    margin: 40px auto 60px;
+  }
+  .date{
+    margin-bottom: 30px;
+  }
+}

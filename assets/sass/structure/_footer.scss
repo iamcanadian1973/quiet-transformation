@@ -1,0 +1,150 @@
+//
+// Footer
+// --------------------------------------------------
+
+
+.newsletter {
+	background-image: url('assets/images/home/newsletter.jpg');
+	background-size: cover;
+	background-position: top;
+	background-repeat: no-repeat;
+	padding: 65px 0 50px;
+	h2 {
+		font-size: 81px;
+		@include breakpoint(small down) {
+			font-size: 55px;
+		}
+	}
+	h3 {
+		font-size: 42px;
+		margin-bottom: 15px;
+		@include breakpoint(small down) {
+			font-size: 25px;
+			margin-bottom: 15px;
+		}
+	}
+	.home-inputs {
+		width: 50%;
+		display: inline-block;
+		line-height: 0px !important;
+		margin-bottom: 20px;
+		margin-top: 0 !important;
+		@include breakpoint(small down) {
+			display: block;
+			width: 100%;
+			margin-bottom: 10px;
+		}
+		.ginput_container {
+			margin-top: 0 !important;
+		}
+		input {
+			width: 100%;
+			line-height: 30px;
+			padding-left: 15px !important;
+			font-size: 16px !important;
+		}
+		.top_label input.medium,
+		.top_label select.medium {
+			width: 100%;
+		}
+	}
+	.radio-section {
+		text-align: center;
+		margin-top: 0 !important;
+		input {
+			margin-top: 0 !important;
+		}
+		.gfield_label {
+			font-weight: 100;
+			display: block !important;
+			font-size: 21px;
+		}
+		.ginput_container_radio {
+			margin-top: 0 !important;
+		}
+		.gfield_radio {
+			font-size: 21px;
+			@include breakpoint(small down) {
+				display: block;
+				margin: 0 auto;
+				width: 55%;
+			}
+			li {
+				display: inline-block;
+				width: 33.33%;
+				font-size: 21px;
+				@include breakpoint(small down) {
+					width: 100%;
+					display: block;
+					margin: 5px auto;
+					text-align: left;
+				}
+				input {
+					margin-top: 0;
+				}
+			}
+		}
+	}
+	.gform_footer input[type=submit] {
+		@extend .btn-primary;
+		margin: 0 auto !important;
+		display: block !important;
+		@include breakpoint(small down) {
+			max-width: 199px;
+		}
+	}
+}
+
+
+
+.site-footer {
+  padding: 40px 0 30px;
+  p{
+    font-size: 10px;
+  }
+  .footer-nav{
+    display: block;
+    margin: 0 auto 25px;
+    text-align: center;
+    font-weight: 400;
+    text-transform: lowercase;
+    font-size: 12px;
+    letter-spacing: 2px;
+    .menu{
+      li{
+        display: inline-block;
+        text-align: left;
+        margin-right: 30px;
+        a{
+          color: inherit;
+        }
+      }
+    }
+  }
+  .copyright-row{
+    a{
+      color: #9e7e9c;
+      text-decoration: underline;
+    }
+  }
+}
+.social-media-row{
+  margin-bottom: 20px;
+}
+.social-media{
+  height: 40px;
+  width: 40px;
+  border-radius: 50px;
+  display: inline-block;
+  background-color: $purple;
+  margin: 0 5px;
+  svg{
+    //height: 32px;
+    fill: white;
+  }
+}
+.footer-nav{
+  #primary-menu > li:nth-child(4) {
+    display: none;
+  }
+}

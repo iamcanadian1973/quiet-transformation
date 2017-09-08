@@ -1,0 +1,23 @@
+.page-about {
+  h2{
+    margin-bottom: 32px;
+  }
+  .hero {
+    background-image: url('../quiettransformations/assets/images/about/about-hero.jpg');
+  }
+  .the-story {
+    padding-bottom: 80px;
+    h2,
+    p {
+      text-align: left;
+    }
+  }
+  .three-images {
+    height: 805px;
+    background-image: url('../quiettransformations/assets/images/about/3-photos.png');
+    @include breakpoint(small down) {
+      background-image: none;
+      height: 100%;
+   }
+  }
+}

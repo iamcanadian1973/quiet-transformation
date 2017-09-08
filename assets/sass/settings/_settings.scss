@@ -1,0 +1,142 @@
+//  Settings (includes overrides for sass/foundation/settings.scss)
+//  -----------------------------
+//
+//  Table of Contents:
+//
+//   1. Global
+//   2. Breakpoints
+//   3. The Grid
+//   4. Base Typography
+//   5. Off Canvas Menu
+
+
+// 1. Global
+// ---------
+
+$global-font-size: 100%;
+$global-width: 1190px;
+$global-lineheight: 1.4;
+
+$light-gray: #e6e6e6;
+$gray: #6f7485;
+$medium-gray: #cacaca;
+$dark-gray: #8a8a8a;
+$black: #333333;
+$white: #ffffff;
+
+$navy: #252B33;
+$teal: #00b0a3;
+$dark-teal: 059280;
+$purple: #9e7e9c;
+
+
+$body-background: #fff;
+$body-font-color: $gray;
+$body-font-family: 'Merriweather', serif;
+
+$global-margin: 30px;
+$global-padding: 10px;
+$global-weight-normal: normal;
+$global-weight-bold: 300;
+$global-radius: 0;
+$global-text-direction: ltr;
+
+
+// 2. Breakpoints
+// --------------
+
+$breakpoints: (
+  small: 0,
+  medium: 768px,
+  large: 980px,
+  xlarge: 1024px,
+  xxlarge: 1200px,
+  xxxlarge: 1440px
+);
+// must match $breakpoints
+$breakpoint-classes: (small medium large xlarge xxlarge xxxlarge);
+
+
+// 3. The Grid
+// -----------
+
+$grid-row-width: $global-width;
+$grid-column-count: 12; // usually 12
+$grid-column-gutter: (
+  small: 24px,
+  medium: 24px
+);
+$grid-column-align-edge: true;
+$block-grid-max: 8;
+
+
+// 4. Base Typography
+// ---------
+
+$header-font-family: 'Merriweather', serif;
+$header-font-weight: 300;
+$header-font-style: normal;
+
+/// Styles for headings at various screen sizes. Each key is a breakpoint, and each value is a map of heading styles.
+/// @type Map
+$header-styles: (
+  small: (
+    'h1': ('font-size': 40),
+    'h2': ('font-size': 40),
+    'h3': ('font-size': 24),
+    'h4': ('font-size': 16),
+    'h5': ('font-size': 14),
+    'h6': ('font-size': 14),
+  ),
+  medium: (
+    'h1': ('font-size': 48),
+    'h2': ('font-size': 48),
+    'h3': ('font-size': 36),
+    'h4': ('font-size': 21),
+    'h5': ('font-size': 18),
+    'h6': ('font-size': 16),
+  ),
+  large: (
+    'h1': ('font-size': 48),
+    'h2': ('font-size': 48),
+    'h3': ('font-size': 36),
+    'h4': ('font-size': 21),
+    'h5': ('font-size': 18),
+    'h6': ('font-size': 16),
+    )
+);
+/* $header-styles: (
+  small: (
+    'h1': ('font-size': 36),
+    'h2': ('font-size': 30),
+    'h3': ('font-size': 22),
+    'h4': ('font-size': 20),
+    'h5': ('font-size': 16),
+    'h6': ('font-size': 16),
+  ),
+  medium: (
+    'h1': ('font-size': 36),
+    'h2': ('font-size': 30),
+    'h3': ('font-size': 22),
+    'h4': ('font-size': 20),
+    'h5': ('font-size': 16),
+    'h6': ('font-size': 16),
+  ),
+) !default; */
+
+$header-color: $teal;
+$header-lineheight: 50px;
+$header-margin-bottom: 30px;
+$small-font-size: 80%;
+$header-small-font-color: $navy;
+
+$paragraph-font-family: $body-font-family;
+$paragraph-font-style: normal;
+$paragraph-font-weight: 100;
+$paragraph-font-size: 18px;
+$paragraph-line-height: 28px;
+$paragraph-font-color: #6f7485;
+$paragraph-margin-bottom: 30px;
+
+$anchor-color: $teal;
+$anchor-color-hover: scale-color( $teal, $lightness: -20%);

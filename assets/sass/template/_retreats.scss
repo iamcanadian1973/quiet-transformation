@@ -1,0 +1,24 @@
+.pain-management-retreat {
+ @extend .become-more-mindful;
+ background-image: url('../quiettransformations/assets/images/retreats/pain-management-bg.jpg');
+}
+.template-retreats {
+  .hero {
+    background-image: url('../quiettransformations/assets/images/retreats/retreats-bg.jpg');
+  }
+  .workshops {
+    padding: 80px 0 90px;
+    h2{
+      color: #6f7485;
+    }
+    h3{
+      text-align: left;
+    }
+    .workshops-subheader{
+      margin: 20px 0 40px;
+    }
+  }
+}
+.teal {
+  color: $teal;
+}
