@@ -1,6 +1,6 @@
 <?php
 
-function nav_replace_wpse_189788($item_output, $item) {
+function menu_item_add_logo($item_output, $item) {
   //   var_dump($item_output, $item);
   if ( in_array( 'logo', $item->classes ) ) { 
     $site_url = home_url();
@@ -9,7 +9,7 @@ function nav_replace_wpse_189788($item_output, $item) {
   }
   return $item_output;
 }
-add_filter('walker_nav_menu_start_el','nav_replace_wpse_189788',10,2);
+add_filter('walker_nav_menu_start_el','menu_item_add_logo',10,2);
 
 
 
