@@ -26,7 +26,7 @@ $white: #ffffff;
 
 $navy: #252B33;
 $teal: #00b0a3;
-$dark-teal: 059280;
+$dark-teal: #059280;
 $purple: #9e7e9c;
 
 
@@ -63,8 +63,8 @@ $breakpoint-classes: (small medium large xlarge xxlarge xxxlarge);
 $grid-row-width: $global-width;
 $grid-column-count: 12; // usually 12
 $grid-column-gutter: (
-  small: 24px,
-  medium: 24px
+  small: 30px,
+  medium: 30px
 );
 $grid-column-align-edge: true;
 $block-grid-max: 8;
@@ -81,48 +81,31 @@ $header-font-style: normal;
 /// @type Map
 $header-styles: (
   small: (
-    'h1': ('font-size': 40),
-    'h2': ('font-size': 40),
-    'h3': ('font-size': 24),
-    'h4': ('font-size': 16),
-    'h5': ('font-size': 14),
-    'h6': ('font-size': 14),
+    'h1': ('font-size': 44, 'line-height': 1.2 ),
+    'h2': ('font-size': 32, 'line-height': 1.2 ),
+    'h3': ('font-size': 24, 'line-height': 1.2 ),
+    'h4': ('font-size': 20, 'line-height': 1.2 ),
+    'h5': ('font-size': 18, 'line-height': 1.2 ),
+    'h6': ('font-size': 16, 'line-height': 1.2 ),
   ),
   medium: (
     'h1': ('font-size': 48),
-    'h2': ('font-size': 48),
-    'h3': ('font-size': 36),
-    'h4': ('font-size': 21),
-    'h5': ('font-size': 18),
-    'h6': ('font-size': 16),
+    'h2': ('font-size': 36),
+    'h3': ('font-size': 28),
+    'h4': ('font-size': 24),
+    'h5': ('font-size': 21),
+    'h6': ('font-size': 18),
   ),
   large: (
     'h1': ('font-size': 48),
-    'h2': ('font-size': 48),
-    'h3': ('font-size': 36),
-    'h4': ('font-size': 21),
-    'h5': ('font-size': 18),
-    'h6': ('font-size': 16),
+    'h2': ('font-size': 36),
+    'h3': ('font-size': 28),
+    'h4': ('font-size': 24),
+    'h5': ('font-size': 21),
+    'h6': ('font-size': 18),
     )
 );
-/* $header-styles: (
-  small: (
-    'h1': ('font-size': 36),
-    'h2': ('font-size': 30),
-    'h3': ('font-size': 22),
-    'h4': ('font-size': 20),
-    'h5': ('font-size': 16),
-    'h6': ('font-size': 16),
-  ),
-  medium: (
-    'h1': ('font-size': 36),
-    'h2': ('font-size': 30),
-    'h3': ('font-size': 22),
-    'h4': ('font-size': 20),
-    'h5': ('font-size': 16),
-    'h6': ('font-size': 16),
-  ),
-) !default; */
+
 
 $header-color: $teal;
 $header-lineheight: 50px;
@@ -139,4 +122,4 @@ $paragraph-font-color: #6f7485;
 $paragraph-margin-bottom: 30px;
 
 $anchor-color: $teal;
-$anchor-color-hover: scale-color( $teal, $lightness: -20%);
+$anchor-color-hover: $dark-teal;

@@ -13,156 +13,43 @@ get_template_part( 'template-parts/section', 'hero' );
 <div id="primary" class="content-area">
 
 	<main id="main" class="site-main" role="main">
-	<?php
- 	// Default
-	//section_default();
-	/* function section_default() {
-
-		global $post;
-
-		$attr = array( 'class' => 'section default' );
-
-		_s_section_open( $attr );
-
-		print( '<div class="row">' );
-
-			echo '<div class="small-12 large-4 columns">';
-			// lib/functions/theme.php
-			$footer 	= get_field( 'footer', 'option' );
-			printf( '<h3>%s</h3>%s', __( 'Veritas Legal Services', '_s' ), $footer );
-			$phone_number = get_field( 'phone_number', 'option' );
-            if( !empty( $phone_number ) ) {
-                printf( '<p><a href="tel:%1$s" class="phone-number">%1$s</a></p>', $phone_number );
-            }
-			echo '</div>';
-
-			echo '<div class="small-12 large-7 columns">';
-			while ( have_posts() ) :
-
-				the_post();
-
-                echo '<div class="entry-content">';
-
-				the_content();
-
-                echo '</div>';
-
-			endwhile;
-			echo '</div>';
-
-		print( '</div>' );
-		_s_section_close();
-	} */
-	?>
-	<section class="intro" id="intro">
-		<div class="wrap">
-			<div class="row"> <!-- row  -->
-				<header class="entry-header column"><!-- column  -->
-					<h1>Upcoming Workshops & Retreats</h1>
-				</header>
-			</div>
-				<div class="entry-content row">
-					<div class="column large-10 text-center small-centered">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nulla elit, posuere nec mi vel, mattis laoreet nulla. Mauris rutrum dignissim velit, ac dignissim nulla molestie nec. Donec tortor nunc vehicula pretium sapien, elementum rutrum nisl condimentum id.</p>
-					</div>
-				</div><!-- content -->
-		</div><!-- wrap -->
-	</section>
-<hr class="ruler" />
-<section class="workshops" id="workshops">
-	<div class="wrap">
-		<div class="row">
-			<div class="column large-12">
-				<h2>Workshops</h2>
-			</div>
-		 </div>
-		 <div class="row">
-				 <div class="column small-centered large-6">
-	 					<p class="teal text-center workshops-subheader">Check out the upcoming workshops with Maria Hykin held between Cozumel, Mexico and New York City.</p>
-	 			</div>
-			</div>
-			<div class="row">
-					<div class="columns small-centered large-10">
-
-						<div class="row">
-							<?php $loop = new WP_Query( array('post_type' => 'tribe_events' ) );
-							 	while ( $loop->have_posts() ) : $loop->the_post(); ?>
-										<div class="column large-4">
-											<?php the_post_thumbnail(); ?>
-										</div>
-										<div class="column large-8">
-											<?php $title = get_the_title(); ?>
-											<h3><a href="<?php the_permalink(); ?>"><?php echo $title; ?></a></h3>
-											<span class="post-meta"><?php the_date(); ?></span>
-											<?php the_content(); ?>
-										</div>
-
-									<?php endwhile; ?>
-					 </div>
-				 </div>
-			</div>
-	</div>
-</section>
-  <section class="self-care-retreat bg-img flex-container align-middle" id="self-care-retreat">
-    <div class="wrap">
-      <div class="column row show-for-small-only mobile-img">
-        <img src="wp-content/themes/quiettransformations/assets/images/home/self-care-1920.jpg" />
-      </div>
-      <div class="row align-right">
-        <header class="entry-header large-6 column float-right">
-          <p class="upcoming">UPCOMING</p>
-          <h2>Self Care Retreat</h2>
-          <h3 class="italic">March 2 – 14, 2017</h3>
-        </header>
-      </div>
-        <div class="entry-content row align-right">
-          <div class="large-6 column float-right">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nulla elit, posuere nec mi vel, mattis laoreet nulla. Mauris rutrum dignissim velit, ac dignissim nulla molestie nec. Donec tortor nunc, venenatis sit amet efficitur ac, fermentum eget sem. Integer quis volutpat magna, ut consectetur est.
-            </p>
-            <a href="" class="btn-primary">learn more</a>
-          </div>
-        </div><!-- content -->
-    </div><!-- wrap -->
-  </section>
-
-  <section class="pain-management-retreat bg-img" id="pain-management-retreat">
-    <div class="wrap">
-      <div class="column row show-for-small-only mobile-img">
-        <img src="wp-content/themes/quiettransformations/assets/images/home/Become-more-mindful-1920.jpg" />
-      </div>
-      <div class="row"> <!-- row  -->
-        <header class="entry-header column large-5"><!-- column  -->
-					<p class="upcoming">Retreats</p>
-          <h2>Pain Management Retreat</h2>
-          <h3 class="italic">September 2 – 14, 2017</h3>
-        </header>
-      </div>
-        <div class="entry-content row align-middle">
-          <div class="column large-6">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nulla elit, posuere nec mi vel, mattis laoreet nulla. Mauris rutrum dignissim velit, ac dignissim nulla molestie nec. Donec tortor nunc, venenatis sit amet efficitur ac, fermentum eget sem. Integer quis volutpat magna, ut consectetur est.</p>
-            <a href="" class="btn-primary">Learn More</a>
-          </div>
-        </div><!-- content -->
-    </div><!-- wrap -->
-  </section>
-  <section class="testimonial" id="testimonial">
-    <div class="wrap">
-        <div class="entry-content">
-          <div class="row">
-            <div class="column">
-              <img src="wp-content/themes/quiettransformations/assets/images/home/testimonial.png" class="float-center client"/>
-            </div>
-          </div>
-          <div class="row">
-            <div class="column small-centered large-7 text-center">
-              <p class="quote">"I spent a lifetime believing self-care was a shameful notion. Synonymous with self-centered. Maria's beautifully planned and executed retreat on the breathtaking island of Cozumel has changed my perspective. <strong>Self-care is what needs to occur before fully caring for anyone else. I have been quietly transformed.</strong>"</p>
-              <p class="italic">— Jennifer Mann</p>
-              <img src="wp-content/themes/quiettransformations/assets/images/home/butterfly.png" class="float-center butterfly"/>
-            </div>
-          </div>
-        </div><!-- content -->
-    </div><!-- wrap -->
-  </section>
+	
+    <?php
+    // Intro
+    get_template_part( 'template-parts/section', 'intro' );
+    ?>
+    
+    
+    <?php
+    section_workshops();
+    function section_workshops() {
+                
+        global $post;
+        
+        $prefix = 'workshop';
+        $prefix = set_field_prefix( $prefix );
+    
+        $content = get_field( sprintf( '%sintro', $prefix ) );
+        
+        $attr = array( 'class' => 'section workshops' );
+        
+        _s_section_open( $attr );		
+        
+        printf( '<div class="row"><div class="column small-centered large-6"><div class="entry-content">%s</div></div></div>', $content );
+        
+        // events shortcode?
+                
+        _s_section_close();	
+    }
+ 
+ 
+    // Courses and Retreats
+    get_template_part( 'template-parts/section', 'courses-retreats' );
+    
+    // Testimonials
+    get_template_part( 'template-parts/section', 'testimonials' );
+    ?>
+    
 	</main>
 
 

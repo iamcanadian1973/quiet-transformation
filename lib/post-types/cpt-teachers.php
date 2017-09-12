@@ -1,12 +1,12 @@
 <?php
  
 /**
- * Create new CPT - People
+ * Create new CPT - Teachers
  */
  
-class CPT_PEOPLE extends CPT_Core {
+class CPT_TEACHERS extends CPT_Core {
 
-    const POST_TYPE = 'people';
+    const POST_TYPE = 'teacher';
 	const TEXTDOMAIN = '_s';
 	
 	/**
@@ -20,8 +20,8 @@ class CPT_PEOPLE extends CPT_Core {
         parent::__construct(
         
         	array(
-				__( 'People', self::TEXTDOMAIN ), // Singular
-				__( 'People', self::TEXTDOMAIN ), // Plural
+				__( 'Teacher', self::TEXTDOMAIN ), // Singular
+				__( 'Teachers', self::TEXTDOMAIN ), // Plural
 				self::POST_TYPE // Registered name/slug
 			),
 			array( 
@@ -37,7 +37,7 @@ class CPT_PEOPLE extends CPT_Core {
 				'show_in_nav_menus'   => false,
 				'exclude_from_search' => true,
 				'rewrite'             => false,
-				'supports' => array( 'title', 'editor', 'thumbnail', 'page-attributes', 'revisions' ),
+				'supports' => array( 'title', 'editor', 'page-attributes', 'revisions' ),
 				 )
 
         );
@@ -49,4 +49,4 @@ class CPT_PEOPLE extends CPT_Core {
  
 }
 
-new CPT_PEOPLE();
+new CPT_TEACHERS();

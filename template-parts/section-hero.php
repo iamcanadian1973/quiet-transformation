@@ -49,7 +49,7 @@ function section_hero() {
             
         if( !empty( $content ) ) {
             
-             $img = sprintf( '<img src="%shome/hero-butterfly.png" />', trailingslashit( THEME_IMG ) );
+            $img = sprintf( '<img src="%shome/hero-butterfly.png" />', trailingslashit( THEME_IMG ) );
             
             print( '<div class="column row">' );
 

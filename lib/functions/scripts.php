@@ -17,6 +17,12 @@ function _s_register_scripts() {
  					'foundation',
  					),
 				NULL, TRUE );
+                
+    // Slick Carousel
+    wp_register_style( 'slick', 
+					   trailingslashit( THEME_ASSETS ) . 'bower_components/slick-carousel/slick/slick.css' );
+	wp_register_style( 'slick-theme', 
+					   trailingslashit( THEME_ASSETS ) . 'bower_components/slick-carousel/slick/slick-theme.css' );
 }
 
 
@@ -29,6 +35,9 @@ function _s_load_scripts() {
 		if( is_front_page() ) {
  			wp_enqueue_script( 'front-page');
 		}
+        
+        wp_enqueue_style( 'slick' );
+        wp_enqueue_style( 'slick-theme' );
 
 }
 

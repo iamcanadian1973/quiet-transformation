@@ -25,10 +25,10 @@
 			</header>
 		</div>
 			<div class="entry-content row">
-				<div class="column small-centered medium-8 large-8">
+				<div class="column small-centered large-8">
 					<p>Every Quiet Transformation journey starts with an inner turning. Sign up for weekly prompts for slowing down and practicing mindfulness, consectetur adipiscing elit. Quisque nulla elit, posuere nec mi vel, mattis laoreet nulla.</p>
 				</div>
-				<div class="column small-centered medium-7 large-7">
+				<div class="column small-centered large-8">
 					<?php echo do_shortcode('[gravityform id="1" title="false" description="false"]'); ?>
 				</div>
 			</div><!-- content -->
@@ -37,16 +37,16 @@
 <footer id="colophon" class="site-footer" role="contentinfo">
 	<div class="wrap">
 		<div class="row column">
-				<nav id="site-navigation" class="footer-nav" role="navigation">
+			<nav class="footer-nav" role="navigation">
 					<?php
 						// Desktop Menu
 						$args = array(
-							'theme_location' => 'primary',
-							'menu' => 'Primary Menu',
+							'theme_location' => 'footer',
+							'menu' => 'Footer Menu',
 							'container' => 'false',
 							'container_class' => '',
 							'container_id' => '',
-							'menu_id'        => 'primary-menu',
+							'menu_id'        => 'footer-menu',
 							'menu_class'     => 'menu',
 							'before' => '',
 							'after' => '',
@@ -58,16 +58,52 @@
 						wp_nav_menu($args);
 					?>
 			</nav><!-- #site-navigation -->
-		</div>
-			<div class="row column social-media-row text-center">
-				<a href="www.facebook.com" class="social-media"><?php echo get_svg('facebook'); ?></a>
-				<a href="www.twitter.com" class="social-media"><?php echo get_svg('twitter'); ?></a>
-				<a href="www.instagram.com" class="social-media"><?php echo get_svg('instagram'); ?></a>
-			</div>
-			<div class="row column text-center copyright-row">
-				<p>© 2017 Quiet Transformation. All Rights Reserved.  <span class="divider">|</span>
-					<a href="http://bravenarrative.com/" target="_blank">Branding and Web Design by Brave Narrative</a>   <span class="divider">|</span>  Terms and Conditions</p>
-			</div>
+		
+            <?php
+            echo _s_get_social_icons();
+            
+            footer_copyright();
+            
+            function footer_copyright() {
+             
+                $menu = '';
+          
+                if ( has_nav_menu( 'copyright' ) ) {
+                    $args = array(
+                        'theme_location' => 'copyright',
+                        'container' => false,
+                        'container_class' => '',
+                        'container_id' => '',
+                        'menu_id'        => 'copyright-menu',
+                        'menu_class'     => 'menu',
+                        'before' => '',
+                        'after' => '',
+                        'link_before' => '',
+                        'link_after' => '',
+                        'depth' => 0,
+                        'echo' => false
+                    );
+                    
+                    $menu = sprintf( '<span class="links">%s</span>', strip_tags( wp_nav_menu($args), '<a>' ) );	
+                }
+                
+                $designer_url = 'http://bravenarrative.com';
+                $designer = 'Branding and Web Design by Brave Narrative';
+                            
+                printf( '<p>&copy; %s Quiet Transformation. All Rights Reserved.  <span class="divider">|</span>
+                        <a href="%s" target="_blank">%s</a> <span class="divider">|</span>  %s</p>', 
+                        date( 'Y' ), 
+                        $designer_url, 
+                        $designer,
+                        $menu );
+                
+            }
+            
+            
+            ?>
+			
+     </div>
+            
 	</div>
 
  </footer><!-- #colophon -->

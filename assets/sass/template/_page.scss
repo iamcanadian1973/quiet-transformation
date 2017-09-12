@@ -10,9 +10,75 @@ html, body {
     }
 }
 
+
+
+
+section.intro{
+    
+    @include breakpoint(large) {
+     
+        p {
+            font-size: 21px;
+            line-height: 35px;   
+        }
+    }
+
+    .entry-content {
+        padding-bottom: 60px;
+    }
+    
+    h1 {
+      margin-bottom: 20px;
+    }
+
+}
+
+
+
+
+
+
 hr {
   border-bottom: 2px solid #707484;
   width: 100%;
   max-width: 267px;
   margin: 0 auto;
+}
+
+
+.social-icons {
+		
+    @include list-reset;
+    margin-left: -15px;
+    
+    text-align: center;
+    
+    li {
+        display: inline-block;	
+        margin-left: 15px;
+    }
+    
+    a {
+        display: block;
+        width: 43px;
+        height: 43px;
+        border-radius: 100%;
+        position: relative;
+        background-color: $purple;
+        
+        svg {
+            height: 33px;
+            width: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            fill: #fff;
+        }
+        
+        &:hover {
+            background-color: scale-color( $purple, $lightness: 20%);   
+        }
+    }
+        
 }

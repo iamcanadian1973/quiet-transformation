@@ -22,9 +22,12 @@ function _s_get_addtoany_share_icons( $url = '', $title = '' ) {
 	global $post;
 	
 	$socials = array(
-			'google_plus' => 'googleplus',
-			'twitter'     => 'twitter',
-            'facebook'    => 'facebook',
+			'facebook'     => 'facebook',
+			'twitter'      => 'twitter',
+            'pinterest'    => 'pinterest',
+            'linkedin'     => 'linkedin',
+            //'google_plus' => 'googleplus',
+            
  	);
 	
 	

@@ -40,28 +40,28 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:117
+#: functions.php:72
+msgid "Footer Menu"
+msgstr ""
+
+#: functions.php:73
+msgid "Copyright Menu"
+msgstr ""
+
+#: functions.php:119
 msgid "Primary"
 msgstr ""
 
-#: functions.php:118
+#: functions.php:120
 msgid "Header"
 msgstr ""
 
-#: functions.php:126
+#: functions.php:128
 msgid "Widget area for %s"
 msgstr ""
 
 #: header.php:30
 msgid "Skip to content"
-msgstr ""
-
-#: home.php:65
-msgid "Previous Post"
-msgstr ""
-
-#: home.php:68
-msgid "Next Post"
 msgstr ""
 
 #: search.php:22
@@ -80,10 +80,6 @@ msgstr ""
 
 #: page-templates/about.php:2
 msgid "About"
-msgstr ""
-
-#: page-templates/blog.php:2
-msgid "Blog"
 msgstr ""
 
 #: page-templates/contact.php:2
@@ -130,16 +126,24 @@ msgstr ""
 msgid "Sorry no results found."
 msgstr ""
 
-#: template-parts/content-page.php:20, template-parts/content-single.php:25, template-parts/content.php:34
+#: template-parts/content-page.php:20, template-parts/content-single.php:20, template-parts/content.php:34
 msgid "Pages:"
 msgstr ""
 
-#: template-parts/content-page.php:31, lib/functions/template-tags.php:67
+#: template-parts/content-page.php:31, template-parts/content-single.php:31, lib/functions/template-tags.php:67
 msgid "Edit %s"
 msgstr ""
 
-#: template-parts/content-post.php:53
-msgid "Share This:"
+#: template-parts/content-post.php:30
+msgid "Leave a Comment"
+msgstr ""
+
+#: template-parts/content-post.php:69
+msgid "Like It? Share It!"
+msgstr ""
+
+#: template-parts/content-post.php:72
+msgid "Posted In"
 msgstr ""
 
 #: template-parts/content.php:27
@@ -182,4 +186,8 @@ msgstr ""
 
 #: lib/functions/template-tags.php:60
 msgid "% Comments"
+msgstr ""
+
+#: lib/post-types/cpt-schedule.php:65
+msgid "Date"
 msgstr ""

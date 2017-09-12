@@ -47,119 +47,129 @@ get_template_part( 'template-parts/section', 'hero' );
             _s_section_close();	
         }
         ?>
-
-		<section class="become-more-mindful bg-img" id="become-more-mindful">
-			<div class="wrap">
-				<div class="column row show-for-small-only mobile-img">
-					<img src="wp-content/themes/quiettransformations/assets/images/home/Become-more-mindful-1920.jpg" />
-				</div>
-				<div class="row"> <!-- row  -->
-					<header class="entry-header column large-6"><!-- column  -->
-						<h2>become more mindful</h2>
-						<h3 class="italic">7 Days of Mindfulness Course</h3>
-					</header>
-				</div>
-					<div class="entry-content row align-middle">
-						<div class="column large-6">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nulla elit, posuere nec mi vel, mattis laoreet nulla. Mauris rutrum dignissim velit, ac dignissim nulla molestie nec. Donec tortor nunc.
-							</p>
-							<a href="" class="btn-primary">subscribe</a>
-						</div>
-					</div><!-- content -->
-			</div><!-- wrap -->
-		</section>
-		<section class="self-care-retreat bg-img flex-container align-middle" id="self-care-retreat">
-			<div class="wrap">
-				<div class="column row show-for-small-only mobile-img">
-					<img src="wp-content/themes/quiettransformations/assets/images/home/self-care-1920.jpg" />
-				</div>
-				<div class="row align-right">
-					<header class="entry-header large-6 column float-right">
-						<p class="upcoming">UPCOMING</p>
-						<h2>Self Care Retreat</h2>
-						<h3 class="italic">March 2 – 14, 2017</h3>
-					</header>
-				</div>
-					<div class="entry-content row align-right">
-						<div class="large-6 column float-right">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nulla elit, posuere nec mi vel, mattis laoreet nulla. Mauris rutrum dignissim velit, ac dignissim nulla molestie nec. Donec tortor nunc, venenatis sit amet efficitur ac, fermentum eget sem. Integer quis volutpat magna, ut consectetur est.
-							</p>
-							<a href="" class="btn-primary">learn more</a>
-						</div>
-					</div><!-- content -->
-			</div><!-- wrap -->
-		</section>
-
-		<section class="portal" id="portal">
-			<div class="wrap">
-				<div class="column row">
+        
+        <?php
+        get_template_part( 'template-parts/section', 'courses-retreats' );
+        ?>
+        
+        
+		<?php
+        // Default
+        section_portals();
+        function section_portals() {
+                    
+            global $post;
+            
+            $rows = get_field( 'portals' );
+            
+            if( empty( $rows ) ) {
+                return;   
+            }
+            
+            $attr = array( 'class' => 'section portals' );
+            
+            _s_section_open( $attr );		
+            
+            printf( '<div class="column row">
 					<header class="entry-header text-center">
-						<h2>Choose Your Portal</h2>
+						<h2>%s</h2>
 					</header>
-				</div>
-					<div class="entry-content row">
-						<div class="column large-6">
-							<div class="purple-portal">
-								<div class="border"></div>
-								<div class="text">
-									<h3>Self Care</h3>
-									<p>Etiam tristique purus in magna ullamcorper, eu sagittis mauris varius sem quis consectetur.</p>
-									<a href="" class="arrow"></a>
-								</div>
-							</div>
-						</div>
-							<div class="column large-6">
-								<div class="teal-portal">
-									<div class="border"></div>
-									<div class="text">
-										<h3>Pain Management</h3>
-										<p>Proin vehicula varius sem quis consectetur. Pellentesque quis eros ultricies nibh imperdiet.</p>
-										<a href="" class="arrow"></a>
-									</div>
-								</div>
-							</div>
-					</div><!-- content -->
-			</div><!-- wrap -->
-		</section>
+				</div>', 'Choose Your Portal' );
+                
+            print( '<div class="entry-content"><div class="row small-up-1 large-up-2" data-equalizer data-equalize-on="medium">' );
+             
+            foreach( $rows as $row ) {
+                printf( '<div class="column">%s</div>', get_portal( $row ) );
+            }
+             
+            print( '</div></div>' );
+            _s_section_close();	
+        }
+        
+        // Get single portal from repeater
+        function get_portal( $row ) {
+            
+            $heading       = _s_get_heading( $row['heading'], 'h3' );
+            $description   = wpautop( $row['description'] );
+            $link          = $row['link'];
+            $background    = strtolower( $row['background'] );
+            
+            $class = 'arrow';   
+            
+            $button = 'Click Here'; 
+            
+            if( !empty( $link ) ) {
+                $link = sprintf( '<p style="margin-bottom: 0;"><a href="%s" class="%s"><span class="screen-reader-text">%s</span></a></p>', $link, $class, $button );
+            }
+            
+            return sprintf( '<div class="portal %s" data-equalizer-watch><div class="border"></div><div class="text">%s%s%s</div></div>', 
+                    $background, $heading, $description, $link );
+        }
+        
+        ?>
+		
+    
+        <?php
+        // Who
+        section_who();
+        function section_who() {
+                    
+            global $post;
+            
+            $attr = array( 'class' => 'section flex who-is-maria' );
+             
+            $prefix = 'who';
+            $prefix = set_field_prefix( $prefix );
+            
+            $content 		= get_field( sprintf( '%scontent', $prefix ) );
+            
+            $button = '';
+            $button_text = get_field( sprintf( '%sbutton_text', $prefix ) );
+            $button_link = get_field( sprintf( '%sbutton_link', $prefix ) );
+            
+            if( !empty( $button_text ) && !empty( $button_link ) ) {
+                $button = sprintf( '<p><a href="%s" class="btn-primary">%s</a></p<', $button_link, $button_text );
+            }
+            
+            
+            $attachment_id = get_field( sprintf( '%sphoto', $prefix ) );
+            if( !empty( $attachment_id ) ) {
+                  
+                $size = 'hero';
+                $background = wp_get_attachment_image_src( $attachment_id, $size );
+                if( !empty( $background ) ) {
+                    $attr['style'] = sprintf( 'background-image: url(%s);', $background[0] );
+                }
+                
+                
+                
+                $size = 'large';
+                $image = _s_get_acf_image( $attachment_id, $size );
+                  
+                if( !empty( $image ) ) {
+                    $image = sprintf( '<div class="show-for-small-only">%s</div>', $image );
+                }
+            }
+              
+            _s_section_open( $attr );		
+            
+            echo '<div class="row"><div class="small-12 large-6 columns">';
+            
+            echo $image;
+            
+            printf( '<div class="entry-content">%s%s</div>', $content, $button );
 
-		<section class="who-is-maria bg-img flex-container align-middle" id="who-is-maria">
-			<div class="wrap">
-				<div class="column row show-for-small-only mobile-img">
-					<img src="wp-content/themes/quiettransformations/assets/images/home/who-is-maria-1920.jpg" />
-				</div>
-				<div class="row">
-					<header class="entry-header column large-6">
-						<h2>Who is Maria Hykin?</h2>
-					</header>
-				</div>
-					<div class="entry-content row">
-						<div class="column medium-8 large-6">
-							<p>As a yoga and meditation teacher, Maria embodies the knowledge and inspiration needed to create a safe and tranquil space for your transformation. Her mission is to ensure that your trip is a meaningful experience. She will help you gain clarity and shape your life into one you will truly enjoy.</p>
-							<p>In her past life as a chief of administration at a Manhattan-based consulting firm, Maria was an expert in workplace relationships & talent management. In 2010, she traded her executive boardroom in New York City for an oceanfront one-bedroom on Cozumel. Now she calls this island her home and will be happy to share its magical secrets with you. Maria’s brilliant hosting skills will take all the worry and guesswork out of your trip, making you feel like a local.</p>
-							<a href="" class="btn-primary">read more</a>
-						</div>
-					</div><!-- content -->
-			</div><!-- wrap -->
-		</section>
+            echo '</div></div>';
+            
+            _s_section_close();	
+        }
+        ?>
 
-		<section class="testimonial" id="testimonial">
-			<div class="wrap">
-					<div class="entry-content">
-						<div class="row">
-							<div class="column">
-								<img src="wp-content/themes/quiettransformations/assets/images/home/testimonial.png" class="float-center client"/>
-							</div>
-						</div>
-						<div class="row">
-							<div class="column small-centered large-7 text-center">
-								<p class="quote">"I spent a lifetime believing self-care was a shameful notion. Synonymous with self-centered. Maria's beautifully planned and executed retreat on the breathtaking island of Cozumel has changed my perspective. <strong>Self-care is what needs to occur before fully caring for anyone else. I have been quietly transformed.</strong>"</p>
-								<p class="italic">— Jennifer Mann</p>
-								<img src="wp-content/themes/quiettransformations/assets/images/home/butterfly.png" class="float-center butterfly"/>
-							</div>
-						</div>
-					</div><!-- content -->
-			</div><!-- wrap -->
-		</section>
+
+		<?php
+        // Testimonials
+        get_template_part( 'template-parts/section', 'testimonials' );
+        ?>
 
 	</main>
 </div>

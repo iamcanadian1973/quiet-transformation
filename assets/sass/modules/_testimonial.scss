@@ -1,0 +1,41 @@
+
+section.testimonial {
+   
+	.entry-content {
+        padding-bottom: 30px;    
+    }
+    
+    .thumbnail {
+        margin-bottom: 15px; 
+        display: inline-block;
+        border-radius: 100%;
+        border: 1px solid #efedee;
+        padding: 10px;
+        
+        .circle {
+            border-radius: 100%;
+            border: 1px solid #dfd5e1;
+            padding: 10px;
+        }
+        
+        img {
+           border-radius: 100%;
+           display: block;
+           
+        }
+    }
+    
+	.quote {
+		p {
+            font-size: 21px;
+            line-height: (35/21);   
+        }
+        
+        margin-bottom: 30px;
+	}
+
+	.butterfly {
+		width: 70px;
+		margin-top: 35px;
+	}
+}

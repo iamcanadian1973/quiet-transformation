@@ -74,7 +74,8 @@ h5,
 h6 {
 	color: $header-color;
 	font-family: $header-font-family;
-    text-align: center;
+    letter-spacing: ( -25 / 1000 ) * 1em;
+    
 	a {
 		color: $anchor-color;
 	}
@@ -85,15 +86,28 @@ h6 {
  h1,
 .h1 {
     margin-bottom: 38px;
+    text-align: center;
+    
+    font-size: 44px; 
+ 
+    @include breakpoint(medium) {
+       font-size: 48px; 
+   }
+   
 }
 
 h2 {
   color: $teal;
   letter-spacing: ( -25 / 1000 ) * 1em;
+  margin-bottom: 15px;
+  text-align: center;
 }
+
+
 
 h3 {
     line-height: (50/36);
+    margin-bottom: $global-margin;
 }
 
 // entry content
@@ -103,10 +117,9 @@ h3 {
 	a {
 		color: $anchor-color;
 		text-decoration: none;
-		//text-decoration: underline;
-
+ 
 		&:hover {
-			color: $teal;
+			color: $anchor-color-hover;
 			text-decoration: none;
 		}
 	}
@@ -117,7 +130,7 @@ h3 {
 	}
 
 	p, ul {
-		margin-bottom: 15px;
+		margin-bottom: $global-margin;
 	}
 
     p:last-child {

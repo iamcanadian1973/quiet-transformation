@@ -21,13 +21,16 @@
 	include_once( 'includes/taxonomy-core/Taxonomy_Core.php' );
 
     include_once( 'includes/theme-functions/array.php' );
-
+    
+    include_once( 'includes/table-class.php' );
 
 /****************************************
 	Functions
 *****************************************/
 
-  include_once( 'functions/svg.php' );
+    include_once( 'functions/blog.php' );
+
+    include_once( 'functions/svg.php' );
 
 	include_once( 'functions/theme.php' );
 
@@ -39,15 +42,21 @@
 
 	include_once( 'functions/scripts.php' );
 
-	//include_once( 'functions/foobox.php' );
+	include_once( 'functions/social.php' );
 
 	include_once( 'functions/menus.php' );
 
 	//include_once( 'functions/gravity-forms.php' );
 
-	//include_once( 'functions/widgets.php' );
+	include_once( 'functions/addtoany.php' );
 
-    //include_once( 'functions/addtoany.php' );
+    include_once( 'functions/yoga.php' );
+    
+    include_once( 'functions/courses-retreats.php' );
+    
+    include_once( 'functions/portal.php' );
+    
+    include_once( 'functions/resources.php' );
 
 
 /****************************************
@@ -73,7 +82,15 @@
 	Post Types
 *****************************************/
 
-	//include_once( 'post-types/cpt-case-studies.php' );
-	//include_once( 'post-types/cpt-testimonials.php' );
-    //include_once( 'post-types/cpt-people.php' );
-    //include_once( 'post-types/cpt-faq.php' );
+	include_once( 'post-types/cpt-classes.php' );
+	include_once( 'post-types/cpt-teachers.php' );
+    include_once( 'post-types/cpt-schedule.php' );
+    include_once( 'post-types/cpt-courses.php' );
+    include_once( 'post-types/cpt-retreats.php' );
+    include_once( 'post-types/cpt-testimonials.php' );
+    include_once( 'post-types/cpt-resources.php' );
+    
+/****************************************
+	Widgets
+*****************************************/
+	include_once( 'widgets/widget-cta.php' );

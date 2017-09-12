@@ -37,7 +37,7 @@ class CPT_TESTIMONIAL extends CPT_Core {
 				'show_in_nav_menus'   => false,
 				'exclude_from_search' => true,
 				'rewrite'             => false,
-				'supports' => array( 'title', 'editor', 'page-attributes', 'revisions' ),
+				'supports' => array( 'title', 'editor', 'thumbnail', 'page-attributes', 'revisions' ),
 				 )
 
         );

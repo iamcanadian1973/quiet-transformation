@@ -2875,14 +2875,30 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 (function (document, window, $) {
 
-	'use strict';
+    'use strict';
 
-	// Load Foundation
+    // Load Foundation
 
-	$(document).foundation();
+    $(document).foundation();
 
-	// Touch events for main menu
-	$('.nav-primary li:has(ul)').doubleTapToGo();
+    // Touch events for main menu
+    $('.nav-primary li:has(ul)').doubleTapToGo();
+
+    $(window).load(function () {
+
+        var $el = $('.slick-calendar');
+        $el.on('init', function () {
+            $el.each(function (index) {});
+        });
+
+        $el.slick({
+            dots: false,
+            slidesToShow: 1,
+            arrows: true,
+            nextArrow: '<div class="arrow-right"><span>Next</span></div>',
+            prevArrow: '<div class="arrow-left"><span>Previous</span></div>'
+        });
+    });
 })(document, window, jQuery);
 'use strict';
 

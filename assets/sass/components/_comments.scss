@@ -2,18 +2,41 @@
 // Comments
 //  --------------------------------------------------
 
+.comments-area {
+    padding: 30px 0;   
+}
+
+.comments-title {
+    margin-bottom: 30px;   
+}
+
 .comment-list {
-	.comment {
+	
+    @include list-reset;
+    
+    padding: 30px 0;
+    
+    .comment {
 		> article {
+            margin: 0 0 30px;
 		}
 	}
+    
+    .comment-author {
+        margin-bottom: 5px;   
+    }
+    
+     
+    .comment-metadata {
+        margin-bottom: 10px;
+    }
 
 	.children {
 	}
 }
 
 .comment-header {
-	@extend %clearfix;
+	@extend .clearfix;
 
 	.comment-author {
 	}
@@ -27,15 +50,20 @@
 }
 
 .comment-respond {
-	.form-submit {
-		@extend %clearfix;
+	
+    small a {
+        font-size: 16px;   
+    }
+    
+    .form-submit {
+		@extend .clearfix;
 	}
 }
 
 .comment-notes,
 .logged-in-as,
 .form-allowed-tags {
-	@extend %type;
+	
 }
 
 .comment-notes,
@@ -49,10 +77,13 @@
 
 .comment-form {
 	
-	p {		
+	p {	
+    	
 	}
 	
 	label {
+        display: block;
+        margin: 10px 0 0 0;
 	}
 	
 	input[type="text"],
@@ -60,9 +91,44 @@
 	input[type="url"],
 	select,
 	textarea {
+        width: 100%;
+        outline: none;
+         -webkit-appearance: none;
+        border-radius: 0;
+        padding: 10px;
 	}
+    
+
+	input[type="text"],
+	input[type="email"],
+	input[type="url"],
+	select {
+       
+	}
+    
 	
-	input[type="submit"] {
+	button.submit {
+        display: inline-block;
+        min-width: 180px;
+        padding: 12px 16px;
+        text-align: center;
+        color: $gray;
+        font-size: 18px;
+        line-height: 1.5;
+        transition: ease all 0.3s;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-decoration: none!important;
+         
+        background-color: transparent;
+        border: solid 2px $teal;
+        color: $gray!important;
+        letter-spacing: ( 100 / 1000 ) * 1em;
+        
+        &:hover {
+        background-color: $teal;
+        color: white!important;
+        }
 	}
 	
 }

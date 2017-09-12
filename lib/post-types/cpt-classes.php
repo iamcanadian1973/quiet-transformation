@@ -1,12 +1,12 @@
 <?php
  
 /**
- * Create new CPT - FAQ
+ * Create new CPT - Classes
  */
  
-class CPT_FAQ extends CPT_Core {
+class CPT_CLASSES extends CPT_Core {
 
-    const POST_TYPE = 'faq';
+    const POST_TYPE = 'yoga_class';
 	const TEXTDOMAIN = '_s';
 	
 	/**
@@ -20,8 +20,8 @@ class CPT_FAQ extends CPT_Core {
         parent::__construct(
         
         	array(
-				__( 'FAQ', self::TEXTDOMAIN ), // Singular
-				__( 'FAQs', self::TEXTDOMAIN ), // Plural
+				__( 'Yoga Class', self::TEXTDOMAIN ), // Singular
+				__( 'Yoga Classes', self::TEXTDOMAIN ), // Plural
 				self::POST_TYPE // Registered name/slug
 			),
 			array( 
@@ -38,7 +38,7 @@ class CPT_FAQ extends CPT_Core {
 				'exclude_from_search' => true,
 				'rewrite'             => false,
 				'supports' => array( 'title', 'editor', 'page-attributes', 'revisions' ),
-			)
+				 )
 
         );
 		
@@ -49,4 +49,4 @@ class CPT_FAQ extends CPT_Core {
  
 }
 
-new CPT_FAQ();
+new CPT_CLASSES();

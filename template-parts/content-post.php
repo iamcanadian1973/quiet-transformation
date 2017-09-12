@@ -17,7 +17,7 @@
         $post_image = sprintf( '<a href="%s">%s</a>', get_permalink(), $post_image );
     }
     
-    $post_title = sprintf( '<h3 class="entry-title"><a href="%s">%s</a></h3>', get_permalink(), get_the_title() );
+    $post_title = sprintf( '<h2 class="entry-title"><a href="%s">%s</a></h2>', get_permalink(), get_the_title() );
     
     $post_date = _s_get_posted_on();
     
@@ -32,11 +32,15 @@
     $entry_meta = sprintf( '<div class="entry-meta">%s%s%s</div>', $post_date, $post_author, $post_comments );
 
     if( !is_single() ) {
-         
-         echo $post_image;
-         printf( '<header class="entry-header">%s%s</header>', $post_title, $entry_meta );            
-        
+          echo $post_image;
+          
+          printf( '<header class="entry-header">%s%s</header>', $post_title, $entry_meta );  
     }
+    else {
+        printf( '<header class="entry-header">%s%s</header>', the_title( '<h2 class="entry-title">', '</h2>', false ), $entry_meta );
+    }
+    
+          
 	?>
 	
 	<div class="entry-content">
@@ -45,12 +49,12 @@
 		if( is_single() ) {
 			
 			the_content(); 
-			
-		} else {
+            
+		} 
+        else {
 	
 			_s_the_excerpt( '...', 'Read More &raquo;', 80 );
 			
-			//printf( '<p class="read-more"><a href="%s" class="more">%s ></a></p>', get_permalink(), __( 'Continue Reading', '_s' ) ) ;
 		}
 		?>
 		
@@ -60,15 +64,24 @@
         
         <?php 
         if( is_single() ) {
-  			
-            printf( '<h4 class="text-left">%s</h4>', __( 'Share This:', '_s' ) );
-            
-            printf( '<div class="column row">%s<div class="a2a_kit a2a_default_style facebook-like"><a class="a2a_button_facebook_like"></a></div></div>', _s_get_addtoany_share_icons() );
-  			
+  			            
+            printf( '<div class="column row"><h5 class="text-center">%s</h5>%s</div>', 
+                    __( 'Like It? Share It!', '_s' ), _s_get_addtoany_share_icons() );
+                    
+            printf( '<div class="column row">%s %s | %s</div>', 
+                    __( 'Posted In', '_s' ), 
+                    _s_get_post_terms( get_the_ID() ),
+                    get_comments_number( get_the_ID() )
+                    
+                    );
+  		    
+            echo '<hr />';	
 		} 
+        
         
         ?>
         
+       
          
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

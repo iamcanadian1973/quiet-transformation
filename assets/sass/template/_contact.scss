@@ -2,111 +2,73 @@
 
 .template-contact {
 
-    .site-main {
-        //padding-top: 60px;
-
+    .entry-content {
+        h2 {
+            margin-top: 30px;   
+        }
+        
+        hr {
+            margin-top: 50px;
+        }
+        
+        .social-icons {
+            margin-top: 50px;
+        }
     }
-  .hero {
-    background-image: url('../quiettransformations/assets/images/contact/contact-bg.jpg');
-  }
-	.site-main .section {
-
-		.entry-content > *:last-child {
-			margin-bottom: 0;
-		}
-
-		.columns {
-
-			margin-bottom: 50px;
-
-			&.large-4 {
-
-                > * {
-                    text-align: center;
-
-                    @media #{$large-up} {
-                        text-align: left;
-                    }
-                }
+    
+    .gform_wrapper {
+        margin: 0 auto;
+        width: 75%; 
+        
+        .gform_button {
+            @extend .btn-primary;
+        }
+        p {
+            text-align: center;
+            margin-bottom: 0px;
+            color: #373e4a;
+            font-size: 16px;
+        }
+        .gfield_label,
+        .gchoice_2_5_1 {
+            color: #373e4a!important;
+            font-size: 14px!important;
+            font-weight: 300!important;
+        }
+        .ginput_container{
+            margin-top: 0!important;
+        }
+        .gfield{
+            margin-top: 5px!important;
+        }
+        .newsletter-check {
+            .gfield_label {
+              display: none!important;
             }
-
-            .gform_wrapper {
-
-                padding-top: 30px;
-
-                .gform_title {
-                    color: $navy!important;
-                    margin-bottom: 20px!important;
-                    font-size: 30px!important;
-                    font-weight: 400!important;
-                }
+        }
+        .ginput_container input {
+            border: solid 1px #373e4a;
+            line-height: 37px;
+        }
+        
+        input[type="checkbox"] {
+            margin-top: 0!important;
+            
+            &:focus{
+                outline:none;
             }
+             
+        }
+        
+        .gfield_checkbox label {
+            font-weight: 100!important;
+        }
+        
+        .gform_footer{
+            margin-top: 0;
+        }
+        
+          
+    }
 
-			.gform_wrapper {
-				margin-top: -24px!important;
-
-				.gform_footer {
-					text-align: center;
-				}
-			}
-		}
-	}
-	.contact-intro {
-    padding: 100px 0 40px;
-    @include breakpoint(small down) {
-      padding: 60px 0;
-    }
-    p {
-      text-align: center;
-    }
-  }
-  .contact-info {
-    padding: 40px 0 0;
-    p {
-      text-align: center;
-    }
-    @include breakpoint(small down) {
-      padding: 60px 0;
-    }
-    .social-media-row {
-      padding: 50px 0;
-      margin-bottom: 0;
-    }
-  }
-}
-.contact-form {
-  margin-bottom: 50px;
-  .gform_button {
-    @extend .btn-primary;
-  }
-  p{
-    text-align: center;
-    margin-bottom: 0px;
-    color: #373e4a;
-    font-size: 16px;
-  }
-  .gfield_label,
-  .gchoice_2_5_1 {
-    color: #373e4a!important;
-    font-size: 14px!important;
-    font-weight: 300!important;
-  }
-  .ginput_container{
-    margin-top: 0!important;
-  }
-  .gfield{
-    margin-top: 5px!important;
-  }
-  .newsletter-check {
-    .gfield_label {
-      display: none!important;
-    }
-  }
-  .ginput_container input{
-    border: solid 1px #373e4a;
-    line-height: 37px;
-  }
-  .gform_footer{
-    margin-top: 0;
-  }
 }
